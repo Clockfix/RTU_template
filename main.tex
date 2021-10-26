@@ -1,0 +1,45 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{mypreamble}
+\usepackage{import}
+%%%%%% Nomainīt datus %%%%%%%%%%
+\author{Vārds Uzvārds}
+\title{Nosaukums}
+\date{\today}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\import{./}{title.tex}                  % Vāks un Titullapa
+\pagebreak
+\import{./}{headersandfooters.tex}      %   galvene un kājene pārējām lapām
+\printglossaries	                    %   saīsinājumi
+\setcounter{page}{2} 
+\pagebreak
+\tableofcontents
+\thispagestyle{fancy}                   %  kopējā stila piešķiršana satura lapai
+%\setcounter{page}{2}                    %  satura lapas numurs tiek iestatīts 
+\pagebreak
+\section*{Ievads}
+\import{sections/}{ievads.tex}
+
+\section{Pirmā nodaļa}
+\import{sections/}{pirma.tex}
+
+\section{Otrā nodaļa - attēli}
+\import{sections/}{atteli.tex}
+
+\section{Trešā nodaļa - saīsinājumi}
+\import{sections/}{saisinajumi.tex}
+
+\section{Ceturtā nodaļa - tabulas un formulas}
+\import{sections/}{tabulas.tex}
+
+\section{Piektā nodaļa - literatūra}
+\import{sections/}{literatura.tex}
+
+\section{Sestā nodaļa - pielikumi}
+\import{sections/}{pielikumi.tex}
+
+\import{./}{sections/bibliography.tex}
+
+% pielikumi
+\import{./}{appendices.tex}
+\end{document}

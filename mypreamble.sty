@@ -1,0 +1,164 @@
+\ProvidesPackage{mypreamble}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Saīsinājumi  lieto  \gls{abc} un Gls{abc}
+\usepackage[acronym,automake,nonumberlist]{glossaries}  % option 
+\makeglossaries
+\newacronym{li}{LI}{laika intervāls}
+\newacronym{fpga}{FPGA}{programmējamie loģiskie masīvi \textit{no angļu: Field-Programmable Gate Array}}
+\newacronym{vhdl}{VHDL}{ļoti liela ātruma integrēto shēmu aparatūras apraksta valoda \textit{no angļu: Very high speed integrated circuit Hardware Description Language}}
+\newacronym{fsm}{FSM}{galīga stāvokļa automāts \textit{no angļu: Finite-State Machine}}
+\newacronym{usb}{USB}{universālā seriālā kopne \textit{no angļu: Universal Serial Bus}}
+\newacronym{uart}{UART}{universālais asinhronais raiduztvērējs \textit{no angļu: Universal asynchronous receiver/transmitter}}
+\newacronym{ascii}{ASCII}{Amerikas informācijas apmaiņas standartkods \textit{no angļu: American Standard Code for Information Interchange}}
+\newacronym{rms}{RMS}{vidējā kvadrātiskā vērtība \textit{no angļu: Root Mean Square}}
+\newacronym{rtu}{RTU}{Rīgas Tehniskā universitāte}   
+\newacronym{lidar}{LiDAR}{attāluma lāzermērīšana \textit{no angļu: Light Detection And Ranging}}
+\newacronym{cwl}{CWL}{korelācijas Vēja attāluma lāzermērīšana \textit{no angļu: Correlation Wind LiDAR}}
+\newacronym{pcb}{PCB}{iespiedshēmas plate \textit{no angļu: Printed Circuit Board}}
+\newacronym{adc}{ADC}{analogciparu pārveidotājs \textit{no angļu: Analog-to-digital converter}}
+\newacronym{ntc}{NTC}{negatīvs temperatūras koeficients \textit{no angļu: Negative Temperature Coefficient}}
+\newacronym{pll}{PLL}{fiksētas fāzes kontūrs \textit{no angļu: Phase-locked loop}}
+\newacronym{kbf}{KBF}{kumulatīvā blīvuma funkcija}
+\newacronym{vbf}{VBF}{varbūtības blīvuma funkcija}
+%--------------------------------------------------------------------------------------------------
+\renewcommand*{\acronymname}{\uppercase{Saīsinājumi}}
+\setacronymstyle{short-long} % vai short-long-desc
+\glsdisablehyper   % izslēdz saites uz saīsinājumiem
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% XeLaTeX atbalsts (No LU parauga)
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{graphicx}
+%\usepackage{float} %neizmantot ja izmanto floatrow
+
+% linki dokumentā
+\usepackage{hyperref}
+
+\renewcommand\topfraction{.9}
+\renewcommand\textfraction{0.2}
+\renewcommand\floatpagefraction{0.8}
+
+% SI mērvienību sistēmas pakete
+%\usepackage{siunitx}
+
+% Valodu atbalsts (no LU parauga)
+\usepackage{polyglossia}
+\setdefaultlanguage{latvian} % Rakstīsim latviski!
+\setotherlanguages{english,russian}
+
+% Fonti -- var rakstīt sistēmas fontu nosaukumus
+\setmainfont[Mapping=tex-text]{Times New Roman}
+%\setsansfont[Mapping=tex-text]{Arial}
+%\newfontfamily\russianfont{Times New Roman}
+
+% Paragraph formatting
+\renewcommand{\baselinestretch}{1.5}
+
+%\usepackage[figurename=Attēls]{caption}
+\usepackage{caption} % hypcap is true by default so [hypcap=true] is optional in \usepackage[hypcap=true]{caption}
+% Tabulām caption augšā un numurs savā rindā
+\DeclareCaptionFormat{hfillstart}{\hfill#1#2#3\par}
+\captionsetup[table]{format=hfillstart,labelsep=newline,justification=centering}
+
+% vairākiem attēliem vienā figure 
+\usepackage{subcaption}
+
+\usepackage{floatrow}
+\floatsetup[table]{capposition=top}
+%--------------------------------------
+% vairākiem attēliem vienā figure 
+%\usepackage{subcaption}
+
+\usepackage{lastpage}	% atsauce uz pēdējo lapaspusi        \pageref{LastPage} 
+
+% Papīra izmērs un robežas
+\usepackage{geometry}
+\geometry{top=3.18cm, bottom=3.18cm, left=2.54cm, right=2.54cm}
+
+% Keywords command
+\providecommand{\keywords}[1]
+{
+  \normalsize	
+  \textbf{\textit{Keywords---}} #1
+}
+\providecommand{\atslegvardi}[1]
+{
+  \normalsize	
+  \textbf{\textit{Atslēgvārdi---}} #1
+}
+
+% Nodaļu nosaukumi centrēti - visi lielie burti ---------------------
+\usepackage[immediate]{silence}
+\WarningFilter[temp]{latex}{Command} % silence the warning
+\usepackage{sectsty}
+\DeactivateWarningFilters[temp] % So nothing unrelated gets silenced
+\sectionfont{\centering\uppercase}
+\subsectionfont{\centering}
+\subsubsectionfont{\centering}
+% punkts aiz daļas numura
+\usepackage{tocloft}
+\usepackage{secdot}
+\sectiondot{section}
+\sectiondot{subsection}
+\sectiondot{subsubsection}
+\renewcommand{\cftsecaftersnum}{.}
+\renewcommand{\cftsubsecaftersnum}{.}
+\renewcommand{\cftsubsubsecaftersnum}{.}
+% satura pārdēvēšana - centrēsāna un All caps
+\addto{\captionslatvian}{\renewcommand*{\contentsname}{\begin{center}SATURS\end{center}}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections, if you really want! (It is default in report and book class (So you may not need it).
+% satura fonts "not bold"
+\renewcommand{\cftsecfont}{\mdseries}
+\renewcommand{\cftsecpagefont}{\mdseries}
+% Satura rindu atstarpes
+\renewcommand\cftsecafterpnum{\vskip10pt}
+\renewcommand\cftsubsecafterpnum{\vskip10pt}
+% Lai ievietotu saturā punktus kuri netiek numurēti aiz tiem jāievieto sekjoša rinda
+% \addcontentsline{toc}{chapter}{Foreword}
+% https://tex.stackexchange.com/questions/129687/tableofcontents-does-not-list-the-unnumbered-chapter
+%------------------------------------------------
+
+
+
+\usepackage{tabularx}
+\renewcommand\tabularxcolumn[1]{m{#1}}% for vertical centering text in X column
+
+\usepackage{textcomp} % Trademark: \texttrademark Registered: \textregistered Celsius: \textcelsius  \textcopyright
+
+\usepackage{appendix}	% pielikumi
+% https://www.tex.ac.uk/FAQ-appendix.html
+
+% sarakstu numerācijai
+\usepackage{enumitem}
+
+% nestandarta matemātisko funkciju attēlošanai
+\usepackage{amsmath}
+% \usepackage{eqnarray}
+
+\usepackage{listings}
+\lstset{
+    basicstyle=\small\ttfamily,
+    columns=flexible,
+    breaklines=true
+}
+
+\AddToHook{cmd/section/before}{\clearpage} %katra nodaļa sākas jaunā lapas pusē
+
+
+\usepackage{lipsum} % Generate dummy text (lorem ipsum) in your document
+
+
+% Mumerācija nodaļu ietvaros
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\counterwithin{equation}{section}
+%-------------------------------
+
+
+% lapas numerācija Kājene un galvene lapai
+\usepackage{fancyhdr}  % https://www.overleaf.com/learn/latex/Headers_and_footers#Standard_page_styles
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
+%---------------------------------

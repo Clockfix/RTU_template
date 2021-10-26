@@ -1,0 +1,77 @@
+\subsection{Tabulas}
+\hspace*{5mm} Darbā ievietotās tabulas tiek numurētas, un katrai no tām ir jābūt savam
+nosaukumam. Tabulas nosaukumu raksta simetriski virs tabulas ar mazajiem burtiem
+un lielo sākuma burtu, bez punkta nosaukuma beigās. Tabulas numurē nodaļas
+ietvaros ar arābu cipariem. Tabulas numuru raksta labajā pusē virs tabulas
+nosaukuma. Darba ceturtajā nodaļā ievietotas pirmās pēc kārtas tabulas apraksta
+piemērs:\\
+%
+	\begin{table}[!th]
+	\begin{center}
+		 \begin{tabularx}{\textwidth}{|m{1.5cm}|m{4.8cm}|X|X|}
+		  \hline 
+		  \textbf{N.p.k.} & \textbf{Saīsinājums} &  \multicolumn{2}{c|}{\textbf{Atšifrējums}} \\ 
+		  \hline 
+		  \hline 
+		 1 & lpp. &  lappuse  & * \\ 
+		  \hline 
+		  2   & n.p.k. &  numurs pēc kārtas  & * \\ 
+		  \hline 
+		  3 & sk. vai skat. &  skatīt  & * \\ 
+		  \hline 
+		  4 & š.g. &  šā gada; šī gada  & * \\ 
+		  \hline 
+		  5 & t.i. &  tas ir & *  \\ 
+		  \hline 
+		  6 & u.c. &  un citi & *  \\ 
+		  \hline 
+		  \end{tabularx}  
+		\caption{Man patīk izmantot tabulatix}\label{tab:piemers1}
+	\end{center}
+	\end{table}
+	%
+%
+	\begin{table}[!th]
+	\begin{center}
+		 \begin{tabularx}{\textwidth}{|r|c|X|}
+		  \hline 
+		  \textbf{N.p.k.} & \textbf{Saīsinājums} & 	  \textbf{Atšifrējums} \\ 
+		  \hline 
+		  \hline 
+		 1 & u.tml. &  un tamlīdzīgi   \\ 
+		  \hline 
+		  2   & utt. &  un tā tālāk  \\ 
+		  \hline 
+		  \end{tabularx}  
+		\caption{Man patīk izmantot tabulatix}\label{tab:piemers2}
+	\end{center}
+	\end{table}
+	%
+
+\subsection{Formulas}
+Piemēri:\\
+%
+\begin{equation}\label{eq:taktis-bita}
+	N=\frac{F_{takts}}{R_T}=\frac{100\cdot 10^{6}}{115200}\approx 868,\ [taktis/bits]
+\end{equation}
+%
+\begin{align*} 
+	\text{kur }	& N -  \text{takšu skaits cik nepieciešams gaidīt, pirms sākt pārraidīt nākošo bitu, } \\ 
+				& F_{takts} -  \text{takts frekvence, } Hz  \\
+				& R_T - \text{informācijas pārraides ražīgums, } Bodi
+\end{align*}
+%
+Nākošais piemērs:\\
+%
+\begin{equation}\label{eq:meroga-matrica}
+	T = \begin{bmatrix}
+       								0.5 & 0 & 0 \\
+      								 0 & 0.5  & 0 \\
+      								 0  & 0 & 1
+                                        \end{bmatrix} 
+\end{equation}
+%
+\begin{align*} 
+	\text{kur }	& T -  \text{transformācijas matrica, kas samazina attēlu uz pusi pa } x \text{ un } y \text{ assi} 
+\end{align*}
+%
