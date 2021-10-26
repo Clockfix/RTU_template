@@ -8,15 +8,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \import{./}{title.tex}                  % Vāks un Titullapa
-\pagebreak
+%\clearpage
 \import{./}{headersandfooters.tex}      %   galvene un kājene pārējām lapām
 \printglossaries	                    %   saīsinājumi
+\AddToHook{cmd/section/before}{\clearpage} %katra nodaļa sākas jaunā lapas pusē
 \setcounter{page}{2} 
 \pagebreak
 \tableofcontents
 \thispagestyle{fancy}                   %  kopējā stila piešķiršana satura lapai
 %\setcounter{page}{2}                    %  satura lapas numurs tiek iestatīts 
-\pagebreak
+%\pagebreak
 \section*{Ievads}
 \import{sections/}{ievads.tex}
 
