@@ -11,36 +11,36 @@
 %\clearpage
 \import{./}{headersandfooters.tex}      %   galvene un kājene pārējām lapām
 \printglossaries	                    %   saīsinājumi
-\AddToHook{cmd/section/before}{\clearpage} %katra nodaļa sākas jaunā lapas pusē
+%\AddToHook{cmd/section/before}{\clearpage} %katra nodaļa sākas jaunā lapas pusē (Ne visos LaTex kompilatoros darbojas- darbojas Overleaf, bet uz privātā datora nedarbojās)
 \setcounter{page}{2} 
 \pagebreak
 \tableofcontents
 \thispagestyle{fancy}                   %  kopējā stila piešķiršana satura lapai
 %\setcounter{page}{2}                    %  satura lapas numurs tiek iestatīts 
-%\pagebreak
+\pagebreak
 \section*{Ievads}
 \import{sections/}{ievads.tex}
-
+\pagebreak
 \section{Pirmā nodaļa}
 \import{sections/}{pirma.tex}
-
+\pagebreak
 \section{Otrā nodaļa - attēli}
 \import{sections/}{atteli.tex}
-
+\pagebreak
 \section{Trešā nodaļa - saīsinājumi}
 \import{sections/}{saisinajumi.tex}
-
+\pagebreak
 \section{Ceturtā nodaļa - tabulas un formulas}
 \import{sections/}{tabulas.tex}
-
+\pagebreak
 \section{Piektā nodaļa - literatūra}
 \import{sections/}{literatura.tex}
-
+\pagebreak
 \section{Sestā nodaļa - pielikumi}
 \import{sections/}{pielikumi.tex}
-
+\pagebreak
 \import{./}{sections/bibliography.tex}
-
+\pagebreak
 % pielikumi
 \import{./}{appendices.tex}
 \end{document}
