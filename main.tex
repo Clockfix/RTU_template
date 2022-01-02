@@ -10,9 +10,12 @@
 \import{./}{title.tex}                  % Vāks un Titullapa
 %\clearpage
 \import{./}{headersandfooters.tex}      %   galvene un kājene pārējām lapām
+\import{./}{novertejuma_lapa.tex}
+\setcounter{page}{2}
+\pagebreak
 \printglossaries	                    %   saīsinājumi
 %\AddToHook{cmd/section/before}{\clearpage} %katra nodaļa sākas jaunā lapas pusē (Ne visos LaTex kompilatoros darbojas- darbojas Overleaf, bet uz privātā datora nedarbojās)
-\setcounter{page}{2} 
+%\setcounter{page}{2} 
 \pagebreak
 \tableofcontents
 \thispagestyle{fancy}                   %  kopējā stila piešķiršana satura lapai
